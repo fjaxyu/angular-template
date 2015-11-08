@@ -1,5 +1,8 @@
 'use strict';
 
+//===========================================================================
+//Section 1
+
 var myApp = angular.module('myApp', [
     'ngRoute',
     'ngStorage',
@@ -21,6 +24,12 @@ var myApp = angular.module('myApp', [
     'loginController'
 ]);
 
+
+
+
+//===========================================================================
+//Section 2
+
 myApp.config(["$httpProvider",
     function($httpProvider){
         $httpProvider.interceptors.push(function($location) {
@@ -40,6 +49,10 @@ myApp.config(["$httpProvider",
 
 
 
+
+//===========================================================================
+//Section 3
+
 myApp.config(["$routeProvider", "$locationProvider",
    function($routeProvider, $locationProvider) {
       $routeProvider.
@@ -51,7 +64,7 @@ myApp.config(["$routeProvider", "$locationProvider",
         }).
       
       
-//====================================================================================
+//================================
 //USERS      
       
 //      Signup Page
