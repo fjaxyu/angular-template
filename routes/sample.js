@@ -42,4 +42,4 @@ var  sample = {
     }
 }
 
-module.exports = move
+module.exports = sample
