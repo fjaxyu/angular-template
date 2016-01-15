@@ -1,30 +1,30 @@
 var database = require("./database.js")
 
-var myCollection = database.get("Sample")
+var sampleCollection = database.get("Sample")
 
-var collection = {
+var  sample = {
     getByName : function(req, res){
 		var name = req.params.name	
 		var regex = new RegExp('^' + name, 'gi')
-		myCollection.find({"name":regex}, function(err, data){
+		sampleCollection.find({"name":regex}, function(err, data){
 			res.json(data)
 		})
 	},
     getAll : function(req,res){
-		myCollection.find({}, function(err, data){
+		composerCollection.find({}, function(err, data){
 			res.json(data)
 		})
 	},
     getExactName : function(req, res){
 		var name = req.params.name
         var regex = new RegExp(["^", name, "$"].join(""), "i");
-		myCollection.find({"name":regex}, function(err, data){
+		composerCollection.find({"name":regex}, function(err, data){
 			res.json(data)
 		})
 	},
     addSampleItem : function(req, res){    
         var newItem = req.body   
-        myCollection.insert(newItem, function(err, data){ 
+        composerCollection.insert(newItem, function(err, data){ 
             if(data != undefined){
                 console.log("success!")
             } else {
@@ -35,11 +35,11 @@ var collection = {
     updateSampleItem : function(req, res){
     	var updateItem = req.body
     	console.log(updateItem)
-    	myCollection.update({"_id":updateItem._id}, updateItem, function(err, data){
+    	composerCollection.update({"_id":updateItem._id}, updateItem, function(err, data){
     		console.log(updateItem)
     		res.json(updateItem)
     	})
     }
 }
 
-module.exports = collection
+module.exports = move
